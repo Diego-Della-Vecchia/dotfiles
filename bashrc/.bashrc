@@ -64,6 +64,14 @@ if ! shopt -oq posix; then
     [ -f /etc/bash_completion ] && . /etc/bash_completion
 fi
 
+# --- FZF ---
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#51576D,bg:#303446,spinner:#F2D5CF,hl:#E78284 \
+--color=fg:#C6D0F5,header:#E78284,info:#CA9EE6,pointer:#F2D5CF \
+--color=marker:#BABBF1,fg+:#C6D0F5,prompt:#CA9EE6,hl+:#E78284 \
+--color=border:#737994,label:#C6D0F5"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # --- Node Version Manager (nvm) ---
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -75,6 +83,10 @@ export ANDROID_SDK_ROOT="$HOME/Android"
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export PATH="$PATH:$ANDROID_HOME/emulator"
+
+# --- Aliases ---
+alias bat="batcat"
+alias fd="fdfind"
 
 # --- tmux auto-start ---
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen|tmux ]] && [ -z "$TMUX" ]; then
