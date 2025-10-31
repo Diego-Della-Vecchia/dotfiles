@@ -69,16 +69,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
-# --- bun ---
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # --- Android SDK ---
 export ANDROID_HOME="$HOME/Android"
 export ANDROID_SDK_ROOT="$HOME/Android"
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export PATH="$PATH:$ANDROID_HOME/emulator"
+
+# --- Bat ---
+export BAT_CONFIG_DIR="$HOME/.config/bat"
 
 # --- tmux auto-start ---
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen|tmux ]] && [ -z "$TMUX" ]; then

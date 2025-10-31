@@ -1,0 +1,13 @@
+# packages.txt
+# --- General utils ---
+curl
+git
+unzip
+wget
+jq
+ripgrep
+bat
+tree
+fzf
+tmux
+neofetch
