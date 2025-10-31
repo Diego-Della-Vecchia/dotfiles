@@ -11,3 +11,4 @@ tree
 fzf
 tmux
 neofetch
+stow
