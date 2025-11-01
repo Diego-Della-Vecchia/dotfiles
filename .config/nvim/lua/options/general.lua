@@ -1,4 +1,3 @@
-
 local opt = vim.opt --For concicesness
 
 opt.relativenumber = false
@@ -31,3 +30,16 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- inline error messages 
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = "▶",   
+    spacing = 2,    
+    severity = { min = vim.diagnostic.severity.ERROR },  
+  },
+  signs = true,        
+  underline = true,    
+  update_in_insert = false, 
+  severity_sort = true,     
+})

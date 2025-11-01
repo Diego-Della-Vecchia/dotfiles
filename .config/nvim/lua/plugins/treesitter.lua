@@ -9,6 +9,7 @@ return {
         "typescript",
         "tsx",
         "json",
+        "markdown"
       },
       highlight = { enable = true },
       indent = { enable = true },

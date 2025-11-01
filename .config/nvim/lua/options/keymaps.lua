@@ -26,4 +26,5 @@ keymap.set("n", "<leader>hn", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buf
 keymap.set("n", "<leader>hp", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 keymap.set("n", "<leader>hx", "<cmd>BufferLinePickClose<CR>", { desc = "Chose buffer to close" })
 
-
+-- LSP info
+keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })

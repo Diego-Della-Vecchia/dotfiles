@@ -18,7 +18,8 @@ return {
     "mason-org/mason-lspconfig.nvim",
     opts = {
       ensure_installed = { 
-        "lua_ls"
+        -- Lua
+        "lua_ls",
       }
     },
     dependencies = {
