@@ -1,9 +1,6 @@
 return {
   "catppuccin/nvim",
   name = "catppuccin",
-return {
-  "catppuccin/nvim",
-  name = "catppuccin",
   opts = {
     transparent_background = true,
     flavour = "frappe",
