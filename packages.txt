@@ -13,3 +13,4 @@ tmux
 neofetch
 stow
 fd-find
+build-essential

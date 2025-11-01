@@ -16,6 +16,9 @@ A collection of configuration files and settings for development environment set
 3. Run `stow` to symlink dotfiles to your home directory: `stow .`
 4. Customize settings as needed for your system
 
+### FZF 
+
+You may need to recompile the telescope-fzf-native extension in the `.local` folder
 ## Stow
 
 This repository uses [GNU Stow](https://www.gnu.org/software/stow/) to manage symlinks. Stow automatically creates symbolic links from the dotfiles directory to your home directory, organizing files by directory structure.
