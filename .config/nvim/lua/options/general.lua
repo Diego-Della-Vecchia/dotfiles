@@ -2,7 +2,7 @@ local opt = vim.opt --For concicesness
 
 opt.relativenumber = false
 opt.number = true
-opt.fillchars = {eob = " "}
+opt.fillchars = { eob = " " }
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
@@ -19,8 +19,8 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 opt.cursorline = true
 
 opt.termguicolors = true -- enable true colors for modern colorschemes
-opt.background = "dark"  -- tell colorschemes the background is dark
-opt.signcolumn = "yes"   -- always show the sign column to prevent text shift
+opt.background = "dark" -- tell colorschemes the background is dark
+opt.signcolumn = "yes" -- always show the sign column to prevent text shift
 
 opt.backspace = "indent,eol,start"
 
@@ -31,15 +31,15 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
--- inline error messages 
+-- inline error messages
 vim.diagnostic.config({
   virtual_text = {
-    prefix = "▶",   
-    spacing = 2,    
-    severity = { min = vim.diagnostic.severity.ERROR },  
+    prefix = "▶",
+    spacing = 2,
+    severity = { min = vim.diagnostic.severity.ERROR },
   },
-  signs = true,        
-  underline = true,    
-  update_in_insert = false, 
-  severity_sort = true,     
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
 })

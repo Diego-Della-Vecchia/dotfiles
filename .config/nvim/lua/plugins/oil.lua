@@ -1,5 +1,5 @@
 return {
-  'stevearc/oil.nvim',
+  "stevearc/oil.nvim",
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
@@ -16,9 +16,10 @@ return {
   keys = {
     {
       "<leader>e",
-      function() require("oil").open() end,
+      function()
+        require("oil").open()
+      end,
       desc = "Open Oil file explorer",
     },
   },
 }
-

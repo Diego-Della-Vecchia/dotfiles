@@ -4,7 +4,7 @@ local keymap = vim.keymap -- For conciceseness
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
--- Save files 
+-- Save files
 
 -- Normal mode
 keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save file" })
@@ -25,6 +25,3 @@ keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }
 keymap.set("n", "<leader>hn", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
 keymap.set("n", "<leader>hp", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 keymap.set("n", "<leader>hx", "<cmd>BufferLinePickClose<CR>", { desc = "Chose buffer to close" })
-
--- LSP info
-keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })

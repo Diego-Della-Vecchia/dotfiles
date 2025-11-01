@@ -2,7 +2,7 @@ return {
   "akinsho/bufferline.nvim",
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
-    require("bufferline").setup {
+    require("bufferline").setup({
       options = {
         -- Show numbers (optional)
         numbers = "none",
@@ -16,10 +16,9 @@ return {
         show_close_icon = false,
         diagnostics = "nvim_lsp",
         always_show_bufferline = true,
-        separator_style = "padded"  
+        separator_style = "padded",
       },
-      highlights = require("catppuccin.special.bufferline").get_theme()
-    }
+      highlights = require("catppuccin.special.bufferline").get_theme(),
+    })
   end,
 }
-

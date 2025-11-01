@@ -14,3 +14,4 @@ neofetch
 stow
 fd-find
 build-essential
+luarocks

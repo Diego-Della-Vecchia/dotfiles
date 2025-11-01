@@ -1,4 +1,3 @@
-
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
@@ -21,4 +20,3 @@ return {
     require("noice").setup(opts)
   end,
 }
-

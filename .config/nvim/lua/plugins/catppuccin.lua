@@ -5,11 +5,12 @@ return {
     transparent_background = true,
     flavour = "frappe",
     integrations = {
-    telescope = {
+      telescope = {
         enabled = true,
-      }
+      },
+      noice = true,
+      notify = true,
     },
-  noice = true
   },
   config = function(_, opts)
     require("catppuccin").setup(opts)
