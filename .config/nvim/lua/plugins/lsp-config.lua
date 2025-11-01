@@ -29,7 +29,7 @@ return {
         "lua_ls",
 
         -- Web
-        "tsserver",
+        "ts_ls",
         "jsonls",
         "html",
         "cssls",
