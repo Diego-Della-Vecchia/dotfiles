@@ -38,3 +38,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+
+local plugins = {
+{ "catppuccin/nvim", name = "catppuccin", opts = { transparent_background = true }, priority = 1000 }
+}
+local opts = {}
+
+require("lazy").setup(plugins,opts)
+
+vim.cmd("colorscheme catppuccin-frappe")
+
