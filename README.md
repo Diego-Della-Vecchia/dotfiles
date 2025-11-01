@@ -23,15 +23,10 @@ This repository uses [GNU Stow](https://www.gnu.org/software/stow/) to manage sy
 To install a specific package: `stow <package_name>`
 To remove symlinks: `stow -D <package_name>`
 
-## Structure
+## Packages
 
-```
-dotfiles/
-├── shell/
-├── editor/
-├── tools/
-└── README.md
-```
+packages.txt defines a number of packages to be installed via the setup script. 
+Additionally, the setup script installs some tools manually, which cannot be installed via package managers.
 
 ## Usage
 
