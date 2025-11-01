@@ -33,12 +33,20 @@ return {
         "jsonls",
         "html",
         "cssls",
+        "emmet_ls",
 
         -- Markdown
         "marksman",
 
         -- YAML
         "yamlls",
+      },
+      init_options = {
+        html = {
+          options = {
+            ["bem.enabled"] = true,
+          },
+        },
       },
     },
     config = function(_, opts)
