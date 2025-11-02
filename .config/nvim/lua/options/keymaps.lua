@@ -22,6 +22,6 @@ keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- 
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
 -- Bufferline buffer navigation
-keymap.set("n", "<leader>hn", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
-keymap.set("n", "<leader>hp", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
-keymap.set("n", "<leader>hx", "<cmd>BufferLinePickClose<CR>", { desc = "Chose buffer to close" })
+keymap.set("n", "<leader>bn", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+keymap.set("n", "<leader>bp", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
+keymap.set("n", "<leader>bx", "<cmd>BufferLinePickClose<CR>", { desc = "Chose buffer to close" })
