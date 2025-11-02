@@ -33,5 +33,9 @@ return {
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "TabLine", { bg = "NONE" })
+
+    -- Make oil.nvim transparent
+    vim.api.nvim_set_hl(0, "OilNormal", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "OilFloat", { bg = "NONE" })
   end,
 }
