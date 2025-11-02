@@ -32,14 +32,16 @@ return {
             preview_cutoff = 120,
           },
           attach_mappings = function(prompt_bufnr, map)
-            map("i", "<C-d>", function()
+            local rm_mark = function()
               local state = require("telescope.actions.state")
               local selected_entry = state.get_selected_entry()
               local current_picker = state.get_current_picker(prompt_bufnr)
 
               table.remove(harpoon_files.items, selected_entry.index)
               current_picker:refresh(finder())
-            end)
+            end
+            map("i", "<C-d>", rm_mark)
+            map("n", "<C-d>", rm_mark)
             return true
           end,
         })
