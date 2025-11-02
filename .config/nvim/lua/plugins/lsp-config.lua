@@ -47,6 +47,18 @@ return {
             ["bem.enabled"] = true,
           },
         },
+        lua_ls = {
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = { "vim" },
+              },
+              workspace = {
+                checkThirdParty = false,
+              },
+            },
+          },
+        },
       },
     },
     config = function(_, opts)
