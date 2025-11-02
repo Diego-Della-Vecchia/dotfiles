@@ -12,12 +12,8 @@ if ! command -v nvm &>/dev/null; then
 fi
 
 # Install Neovim (latest)
-if ! command -v nvim &>/dev/null; then
     echo "Installing Neovim..."
-    sudo add-apt-repository -y ppa:neovim-ppa/stable
-    sudo apt update
-    sudo apt install -y neovim
-fi
+    sudo snap install nvim --classic
 
 # Install Lazygit
 LAZYGIT_VER=$(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
