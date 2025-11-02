@@ -10,6 +10,7 @@ return {
         "tsx",
         "json",
         "markdown",
+        "markdown_inline",
       },
       highlight = { enable = true },
       indent = { enable = true },
