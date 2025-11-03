@@ -41,6 +41,18 @@ return {
       vim.keymap.set("n", "<leader>fx", builtin.diagnostics, { desc = "Open diagnostics" })
       vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Open quickfix list" })
       vim.keymap.set("n", "<leader>fl", builtin.loclist, { desc = "Open loc list" })
+      vim.keymap.set(
+        "n",
+        "<leader>fs",
+        builtin.lsp_workspace_symbols,
+        { desc = "Open workspace symbols list" }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>fS",
+        builtin.lsp_document_symbols,
+        { desc = "Open document symbols list" }
+      )
     end,
   },
   {
