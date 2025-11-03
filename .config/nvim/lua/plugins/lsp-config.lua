@@ -48,7 +48,6 @@ return {
       -- Keymaps for LSP
       local opts_keymap = { noremap = true, silent = true }
       vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts_keymap)
-      vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts_keymap)
       vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts_keymap)
     end,
   },
