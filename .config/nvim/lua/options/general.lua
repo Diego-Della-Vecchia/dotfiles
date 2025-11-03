@@ -43,3 +43,11 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = true,
 })
+
+-- Populate quickix/location list with diagnostics
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+  callback = function()
+    vim.diagnostic.setqflist({ open = false })
+    vim.diagnostic.setloclist({ open = false })
+  end,
+})

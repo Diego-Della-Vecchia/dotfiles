@@ -32,6 +32,8 @@ return {
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers search" })
       vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Find recent files" })
       vim.keymap.set("n", "<leader>fx", builtin.diagnostics, { desc = "Open diagnostics" })
+      vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Open quickfix list" })
+      vim.keymap.set("n", "<leader>fl", builtin.loclist, { desc = "Open loc list" })
     end,
   },
   {
