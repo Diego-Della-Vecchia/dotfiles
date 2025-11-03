@@ -14,6 +14,7 @@ return {
     -- Setup nvim-notify with proper background
     require("notify").setup({
       background_colour = background_colour,
+      render = "compact",
     })
 
     -- Setup noice
