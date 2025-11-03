@@ -3,7 +3,7 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-fzf-native.nvim", -- fzf sorter
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
       local telescope = require("telescope")
@@ -20,9 +20,16 @@ return {
           },
           sorting_strategy = "ascending",
           layout_config = {
-            prompt_position = "top",
+            horizontal = {
+              preview_cutoff = 0,
+            },
           },
         },
+        previewer = true,
+        -- Enable file previewer
+        file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+        grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+        qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
       })
       telescope.load_extension("fzf")
 
