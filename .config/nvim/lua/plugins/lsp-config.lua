@@ -34,6 +34,7 @@ return {
         "html",
         "cssls",
         "emmet_ls",
+        "tailwindcss",
 
         -- Markdown
         "marksman",
