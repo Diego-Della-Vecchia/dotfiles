@@ -50,8 +50,8 @@ return {
       local opts_keymap = { noremap = true, silent = true }
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts_keymap)
       vim.keymap.set("n", "K", vim.lsp.buf.hover, opts_keymap)
-      vim.keymap.set("n", "ca", vim.lsp.buf.code_action, opts_keymap)
-      vim.keymap.set("n", "rn", vim.lsp.buf.rename, opts_keymap)
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts_keymap)
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts_keymap)
     end,
   },
 
