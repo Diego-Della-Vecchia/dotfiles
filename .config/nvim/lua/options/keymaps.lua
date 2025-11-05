@@ -6,14 +6,13 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- Save files
 
--- Normal mode
 keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save file" })
-
--- Insert mode (so you don't have to exit insert mode)
 keymap.set("i", "<C-s>", "<Esc><cmd>w<CR>a", { desc = "Save file" })
-
--- Visual mode (optional)
 keymap.set("v", "<C-s>", "<Esc><cmd>w<CR>gv", { desc = "Save file" })
+
+-- Remap ctrl+d and ctrl+u to keep cursor in the middle
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
@@ -21,7 +20,18 @@ keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) 
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
--- Bufferline buffer navigation
-keymap.set("n", "<leader>bn", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
-keymap.set("n", "<leader>bp", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
-keymap.set("n", "<leader>bx", "<cmd>BufferLinePickClose<CR>", { desc = "Chose buffer to close" })
+-- Resize with arrows
+keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Resize window up", silent = true })
+keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Resize window down", silent = true })
+keymap.set(
+  "n",
+  "<C-Left>",
+  ":vertical resize +2<CR>",
+  { desc = "Resize window left", silent = true }
+)
+keymap.set(
+  "n",
+  "<C-Right>",
+  ":vertical resize -2<CR>",
+  { desc = "Resize window right", silent = true }
+)

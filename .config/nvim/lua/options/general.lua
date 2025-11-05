@@ -31,6 +31,9 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
+-- global statusline
+vim.opt.laststatus = 3
+
 -- inline error messages
 vim.diagnostic.config({
   virtual_text = {

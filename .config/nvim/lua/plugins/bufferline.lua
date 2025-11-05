@@ -17,8 +17,18 @@ return {
         diagnostics = "nvim_lsp",
         always_show_bufferline = true,
         separator_style = "padded",
+        mode = "tabs",
       },
       highlights = require("catppuccin.special.bufferline").get_theme(),
     })
+    vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+    vim.keymap.set("n", "<leader>tn", "<cmd>BufferLineCycleNext<CR>", { desc = "Next tab" })
+    vim.keymap.set("n", "<leader>tp", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous tab" })
+    vim.keymap.set(
+      "n",
+      "<leader>tx",
+      "<cmd>BufferLinePickClose<CR>",
+      { desc = "Chose buffer to close" }
+    )
   end,
 }
