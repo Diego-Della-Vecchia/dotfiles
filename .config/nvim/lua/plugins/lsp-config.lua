@@ -46,19 +46,6 @@ return {
     config = function(_, opts)
       require("mason-lspconfig").setup(opts)
 
-      -- Mason 2.0+ native vim api for LSP config
-      vim.lsp.config("lua_ls", {
-        settings = {
-          Lua = {
-            runtime = {
-              version = "LuaJIT",
-            },
-            diagnostics = {
-              globals = { "vim" },
-            },
-          },
-        },
-      })
       -- Keymaps for LSP
       vim.keymap.set(
         "n",

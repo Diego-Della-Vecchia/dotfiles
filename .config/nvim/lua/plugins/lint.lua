@@ -14,6 +14,7 @@ return {
     -- Configure luacheck linter
     lint.linters.luacheck = {
       cmd = "luacheck",
+      name = "luacheck",
       stdin = true,
       args = {
         "--globals",
