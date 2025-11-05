@@ -47,11 +47,30 @@ return {
       require("mason-lspconfig").setup(opts)
 
       -- Keymaps for LSP
-      local opts_keymap = { noremap = true, silent = true }
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts_keymap)
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts_keymap)
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts_keymap)
-      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts_keymap)
+      vim.keymap.set(
+        "n",
+        "gd",
+        vim.lsp.buf.definition,
+        { noremap = true, silent = true, desc = "Go to Definition" }
+      )
+      vim.keymap.set(
+        "n",
+        "K",
+        vim.lsp.buf.hover,
+        { noremap = true, silent = true, desc = "Hover Documentation" }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>ca",
+        vim.lsp.buf.code_action,
+        { noremap = true, silent = true, desc = "Code Action" }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>rn",
+        vim.lsp.buf.rename,
+        { noremap = true, silent = true, desc = "Rename Symbol" }
+      )
     end,
   },
 

@@ -2,7 +2,8 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- For conciceseness
 
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+-- clear search highlights
+keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights", silent = true })
 
 -- Save files
 
