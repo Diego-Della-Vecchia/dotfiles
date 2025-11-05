@@ -9,7 +9,7 @@ return {
     view_options = {
       show_hidden = true,
       is_always_hidden = function(name, _)
-        return name:match("^%.git$") ~= nil or name == ".."
+        return name:match("^%.git$") ~= nil or name == ".." or name == "node_modules"
       end,
     },
     -- automatically wipe buffer when file is deleted
