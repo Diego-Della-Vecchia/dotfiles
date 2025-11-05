@@ -94,6 +94,8 @@ return {
       { "<leader>q", group = "Sessions", icon = "" },
       { "<leader>qs", desc = "Save Session", icon = "" },
       { "<leader>qr", desc = "Reload Session", icon = "" },
+      { "<leader>qd", desc = "Disable Autosave", icon = "" },
+      { "<leader>qe", desc = "Enable Autosave", icon = "" },
       { "<leader>qx", desc = "Delete Session", icon = "" },
       { "<leader>qX", desc = "Choose session to delete", icon = "" },
       { "<leader>qf", desc = "Search Sessions", icon = "" },

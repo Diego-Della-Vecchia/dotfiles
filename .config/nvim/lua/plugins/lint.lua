@@ -11,6 +11,23 @@ return {
       lua = { "luacheck" },
     }
 
+    -- Configure luacheck linter
+    lint.linters.luacheck = {
+      cmd = "luacheck",
+      stdin = true,
+      args = {
+        "--globals",
+        "vim",
+        "lvim",
+        "reload",
+        "--",
+      },
+      stream = "stdout",
+      ignore_exitcode = true,
+      parser = require("lint.parser").from_errorformat("%f:%l:%c: %m", {
+        source = "luacheck",
+      }),
+    }
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
       group = lint_augroup,

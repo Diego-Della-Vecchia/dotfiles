@@ -33,6 +33,8 @@ return {
     )
     vim.keymap.set("n", "<leader>qd", "<cmd>AutoSession disable<CR>", { desc = "Disable autosave" })
     vim.keymap.set("n", "<leader>qe", "<cmd>AutoSession enable<CR>", { desc = "Enable autosave" })
+    vim.keymap.set("n", "<leader>qd", "<cmd>AutoSession disable<CR>", { desc = "Disable autosave" })
+    vim.keymap.set("n", "<leader>qe", "<cmd>AutoSession enable<CR>", { desc = "Enable autosave" })
     vim.keymap.set(
       "n",
       "<leader>qf",
