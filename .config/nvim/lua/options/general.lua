@@ -34,17 +34,17 @@ opt.swapfile = false
 -- global statusline
 vim.opt.laststatus = 3
 
--- inline error messages
-vim.diagnostic.config({
-  virtual_text = {
-    prefix = "▶",
-    spacing = 2,
-  },
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = true,
-})
+-- inline error messages, handled with tiny-inline plugin
+-- vim.diagnostic.config({
+--   virtual_text = {
+--     prefix = "▶",
+--     spacing = 2,
+--   },
+--   signs = true,
+--   underline = true,
+--   update_in_insert = false,
+--   severity_sort = true,
+-- })
 
 -- Populate quickix/location list with diagnostics
 vim.api.nvim_create_autocmd("DiagnosticChanged", {
