@@ -46,6 +46,22 @@ return {
     config = function(_, opts)
       require("mason-lspconfig").setup(opts)
 
+      -- Tailwind CSS LSP settings
+      vim.lsp.config.tailwindcss = {
+        settings = {
+          tailwindCSS = {
+            experimental = {
+              classRegex = {
+                { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                { "cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                { "clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                { "twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+              },
+            },
+          },
+        },
+      }
+
       -- Keymaps for LSP
       vim.keymap.set(
         "n",
