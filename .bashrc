@@ -88,6 +88,12 @@ export PATH="$PATH:$ANDROID_HOME/emulator"
 alias bat="batcat"
 alias fd="fdfind"
 
+# --- Aliases to cd backwards faster ---
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
 # --- tmux auto-start ---
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen|tmux ]] && [ -z "$TMUX" ]; then
     exec tmux
