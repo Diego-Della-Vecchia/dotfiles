@@ -71,6 +71,12 @@ return {
       )
       vim.keymap.set(
         "n",
+        "gr",
+        vim.lsp.buf.references,
+        { noremap = true, silent = true, desc = "Go to References" }
+      )
+      vim.keymap.set(
+        "n",
         "K",
         vim.lsp.buf.hover,
         { noremap = true, silent = true, desc = "Hover Documentation" }
