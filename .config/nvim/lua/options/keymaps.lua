@@ -21,18 +21,21 @@ keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) 
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
--- Resize with arrows
-keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Resize window up", silent = true })
-keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Resize window down", silent = true })
+-- Resize with alt + arrows
+keymap.set("n", "<A-Up>", ":resize +2<CR>", { desc = "Increase window height", silent = true })
+keymap.set("n", "<A-Down>", ":resize -2<CR>", {
+  desc = "Decrease window height",
+  silent = true,
+})
 keymap.set(
   "n",
-  "<C-Left>",
-  ":vertical resize +2<CR>",
-  { desc = "Resize window left", silent = true }
+  "<A-Right>",
+  ":vertical resize -2<CR>",
+  { desc = "Decrease window width", silent = true }
 )
 keymap.set(
   "n",
-  "<C-Right>",
-  ":vertical resize -2<CR>",
-  { desc = "Resize window right", silent = true }
+  "<A-Left>",
+  ":vertical resize +2<CR>",
+  { desc = "Increase window width", silent = true }
 )

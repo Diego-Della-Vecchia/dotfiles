@@ -25,6 +25,7 @@ return {
             },
           },
         },
+        file_ignore_patterns = { "node_modules", ".git" },
         previewer = true,
         -- Enable file previewer
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
@@ -34,8 +35,12 @@ return {
       telescope.load_extension("fzf")
 
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Ripgrep search" })
+      vim.keymap.set("n", "<leader>ff", function()
+        builtin.find_files({ hidden = true })
+      end, { desc = "Find files" })
+      vim.keymap.set("n", "<leader>fg", function()
+        builtin.live_grep({ hidden = true })
+      end, { desc = "Ripgrep search" })
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers search" })
       vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
       vim.keymap.set("n", "<leader>fx", builtin.diagnostics, { desc = "Open diagnostics" })
