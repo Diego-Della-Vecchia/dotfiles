@@ -11,6 +11,9 @@ if ! command -v nvm &>/dev/null; then
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 fi
 
+# Install pulumi
+curl -fsSL https://get.pulumi.com | sh
+
 # Install Neovim (latest)
     echo "Installing Neovim..."
     sudo snap install nvim --classic
