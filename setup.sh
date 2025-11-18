@@ -12,7 +12,12 @@ if ! command -v nvm &>/dev/null; then
 fi
 
 # Install pulumi
+echo "Installing Pulumi..."
 curl -fsSL https://get.pulumi.com | sh
+
+# Install pulumi esc
+echo "Installing Pulumi ESC..."
+curl -fsSL https://get.pulumi.com/esc/install.sh | sh
 
 # Install Neovim (latest)
     echo "Installing Neovim..."
