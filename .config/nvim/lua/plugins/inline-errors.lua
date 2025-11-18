@@ -5,7 +5,7 @@ return {
   opts = {
     preset = "modern",
     options = {
-      show_sources = {
+      show_source = {
         enabled = true,
       },
       multilines = {
