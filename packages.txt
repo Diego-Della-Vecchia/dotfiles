@@ -15,4 +15,4 @@ stow
 fd-find
 build-essential
 luarocks
-snap
+snapd

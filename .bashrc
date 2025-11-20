@@ -91,6 +91,9 @@ export PATH="$PATH:$ANDROID_HOME/emulator"
 alias bat="batcat"
 alias fd="fdfind"
 
+# --- Glow theme ---
+alias glow="glow -s ~/.config/glow/catppuccin-frappe.json"
+
 # --- Aliases to cd backwards faster ---
 alias ..2="cd ../.."
 alias ..3="cd ../../.."

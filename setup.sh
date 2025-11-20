@@ -20,8 +20,12 @@ echo "Installing Pulumi ESC..."
 curl -fsSL https://get.pulumi.com/esc/install.sh | sh
 
 # Install Neovim (latest)
-    echo "Installing Neovim..."
-    sudo snap install nvim --classic
+echo "Installing Neovim..."
+sudo snap install nvim --classic
+
+# Install Glow 
+echo "Installing Glow..."
+sudo snap install glow
 
 # Install Lazygit
 LAZYGIT_VER=$(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
