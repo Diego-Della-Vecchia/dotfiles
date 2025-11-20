@@ -39,17 +39,6 @@ return {
       { "K", desc = "Show Hover Documentation", icon = "" },
     })
 
-    -- Debugger
-    wk.add({
-      { "<leader>d", group = "Debugger", icon = "" },
-      { "<leader>db", desc = "Toggle Breakpoint", icon = "" },
-      { "<leader>dc", desc = "Continue", icon = "" },
-      { "<leader>di", desc = "Step Into", icon = "" },
-      { "<leader>do", desc = "Step Over", icon = "" },
-      { "<leader>dr", desc = "Open REPL", icon = "" },
-      { "<leader>dv", desc = "Toggle Dap View", icon = "" },
-    })
-
     -- Save file
     wk.add({
       { "<C-s>", desc = "Save file", icon = "" },
