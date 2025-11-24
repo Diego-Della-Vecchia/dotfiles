@@ -15,6 +15,8 @@ return {
     require("notify").setup({
       background_colour = background_colour,
       render = "compact",
+      merge_duplicates = true,
+      top_down = false,
     })
 
     -- Setup noice

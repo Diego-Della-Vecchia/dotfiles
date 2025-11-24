@@ -112,6 +112,7 @@ return {
           "luacheck",
           "eslint",
           "eslint_d",
+          "actionlint",
         },
         auto_update = true,
         run_on_start = true,
