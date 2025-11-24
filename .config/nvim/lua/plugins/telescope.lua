@@ -3,11 +3,16 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    {
+      "nvim-telescope/telescope-live-grep-args.nvim",
+      version = "^1.0.0",
+    },
   },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local action_state = require("telescope.actions.state")
+    local lga_actions = require("telescope-live-grep-args.actions")
 
     -- Define the custom copy function
     local function copy_diagnostic(prompt_bufnr)
@@ -28,8 +33,19 @@ return {
     end
 
     telescope.setup({
+      extensions = {
+        live_grep_args = {
+          auto_quoting = true, -- enable/disable auto-quoting
+          mappings = {
+            i = {
+              ["<C-k>"] = lga_actions.quote_prompt(),
+              ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+            },
+          },
+        },
+      },
       defaults = {
-        -- ADD THIS MAPPINGS BLOCK
+
         mappings = {
           i = {
             ["<C-y>"] = copy_diagnostic, -- Ctrl+y to copy in insert mode
@@ -64,11 +80,14 @@ return {
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("live_grep_args")
 
     -- Keymaps
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Ripgrep search" })
+    vim.keymap.set("n", "<leader>fg", function()
+      require("telescope").extensions.live_grep_args.live_grep_args()
+    end, { desc = "Ripgrep search" })
     vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers search" })
     vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
     vim.keymap.set("n", "<leader>fx", builtin.diagnostics, { desc = "Open diagnostics" })
