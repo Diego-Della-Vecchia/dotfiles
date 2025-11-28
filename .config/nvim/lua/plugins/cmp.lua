@@ -20,12 +20,37 @@ return {
       "L3MON4D3/LuaSnip", -- snippet engine
       "saadparwaiz1/cmp_luasnip", -- snippet completions
       "folke/lazydev.nvim", -- ensure lazydev loads before cmp
+      "onsails/lspkind-nvim", -- pictograms
     },
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+      local lspkind = require("lspkind")
 
       cmp.setup({
+
+        -- Apearance
+        formatting = {
+          format = lspkind.cmp_format({
+            menu = {
+              nvim_lsp = "[LSP]",
+              luasnip = "[Snip]",
+              buffer = "[Buff]",
+              path = "[Path]",
+              cmdline = "[Cmd]",
+              lazydev = "[Dev]",
+            },
+          }),
+        },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+
+        completion = {
+          completeopt = "menu,menuone,noinsert",
+        },
+
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -38,7 +63,7 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = false }),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
