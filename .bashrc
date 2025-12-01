@@ -108,3 +108,5 @@ fi
 # --- Oh My Posh prompt ---
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/catppuccin.omp.json)"
 
+# --- Brew ---
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
