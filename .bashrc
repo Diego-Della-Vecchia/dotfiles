@@ -113,7 +113,3 @@ eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDob
 
 # --- Brew ---
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"

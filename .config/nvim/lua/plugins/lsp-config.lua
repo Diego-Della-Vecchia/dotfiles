@@ -36,6 +36,9 @@ return {
         "emmet_ls",
         "tailwindcss",
 
+        -- Rust
+        "rust_analyzer",
+
         -- Markdown
         "marksman",
 
@@ -45,6 +48,9 @@ return {
     },
     config = function(_, opts)
       require("mason-lspconfig").setup(opts)
+
+      -- Gleam
+      vim.lsp.enable("gleam")
 
       -- Tailwind CSS LSP settings
       vim.lsp.config.tailwindcss = {
@@ -107,6 +113,7 @@ return {
           "stylua",
           "prettierd",
           "prettier",
+          "rustfmt",
 
           -- Linters
           "luacheck",
