@@ -77,6 +77,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
+# --- Rustup ---
+. "$HOME/.cargo/env"
+
 # add Pulumi to the PATH
 export PATH=$PATH:/home/diego/.pulumi/bin
 
@@ -108,3 +111,9 @@ fi
 # --- Oh My Posh prompt ---
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/catppuccin.omp.json)"
 
+# --- Brew ---
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
