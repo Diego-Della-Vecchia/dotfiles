@@ -87,12 +87,9 @@ return {
         vim.lsp.buf.hover,
         { noremap = true, silent = true, desc = "Hover Documentation" }
       )
-      vim.keymap.set(
-        "n",
-        "<leader>ca",
-        vim.lsp.buf.code_action,
-        { noremap = true, silent = true, desc = "Code Action" }
-      )
+      vim.keymap.set({ "n", "v" }, "<leader>ca", function()
+        require("tiny-code-action").code_action({})
+      end, { noremap = true, silent = true, desc = "Code Action" })
       vim.keymap.set(
         "n",
         "<leader>rn",
