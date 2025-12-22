@@ -38,6 +38,9 @@ case "$TERM" in
     xterm*|rxvt*) PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1";;
 esac
 
+# --- Vim mode ---
+set -o vi
+
 # --- ls & grep color support ---
 if command -v dircolors &> /dev/null; then
     [ -r ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
