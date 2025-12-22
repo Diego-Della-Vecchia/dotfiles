@@ -110,7 +110,7 @@ return {
           "stylua",
           "prettierd",
           "prettier",
-          "rustfmt",
+          --"rustfmt"  now installed via rustup
 
           -- Linters
           "luacheck",
