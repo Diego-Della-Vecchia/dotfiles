@@ -68,6 +68,19 @@ return {
         },
       }
 
+      vim.lsp.config.rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+            },
+            checkOnSave = {
+              command = "clippy",
+            },
+          },
+        },
+      }
+
       -- Keymaps for LSP
       vim.keymap.set(
         "n",
