@@ -7,6 +7,10 @@ return {
         -- Load luvit types when the `vim.uv` word is found
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       },
+      performance = {
+        -- Limit the number of entries to avoid window jumping around
+        max_entries = 10,
+      },
     },
   },
 
