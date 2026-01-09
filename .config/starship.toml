@@ -7,13 +7,20 @@ success_symbol = "[[󰄛](green) ❯](peach)"
 error_symbol = "[[󰄛](red) ❯](peach)"
 vimcmd_symbol = "[󰄛 ❮](subtext1)" # For use with zsh-vi-mode
 
-
 [git_branch]
 style = "bold mauve"
 
 [directory]
 truncation_length = 4
 style = "bold lavender"
+
+[nodejs]
+disabled = true
+
+[bun]
+symbol = "🧁 "
+format = "via [$symbol($version )]($style)"
+detect_files = ["bun.lockb", "bun.lock"]
 
 # Pallettes Here
 [palettes.catppuccin_frappe]
