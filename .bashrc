@@ -106,10 +106,6 @@ alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
-# --- tmux auto-start ---
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen|tmux ]] && [ -z "$TMUX" ]; then
-    exec tmux
-fi
 
 # --- Oh My Posh prompt ---
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/catppuccin.omp.json)"
@@ -119,4 +115,3 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # --- bun ---
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
