@@ -106,9 +106,8 @@ alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
-
-# --- Oh My Posh prompt ---
-eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/catppuccin.omp.json)"
+# --- Starship ----
+eval "$(starship init bash)"
 
 # --- Brew ---
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
