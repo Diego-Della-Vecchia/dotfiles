@@ -127,7 +127,6 @@ return {
 
           -- Linters
           "luacheck",
-          "eslint",
           "eslint_d",
           "actionlint",
         },
