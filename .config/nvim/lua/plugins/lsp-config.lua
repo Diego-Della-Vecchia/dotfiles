@@ -81,6 +81,20 @@ return {
         },
       }
 
+      vim.lsp.config.eslint = {
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx",
+          "typescript",
+          "typescriptreact",
+          "typescript.tsx",
+          "vue",
+          "svelte",
+          "astro", -- Add this line!
+        },
+      }
+
       -- Keymaps for LSP
       vim.keymap.set(
         "n",
@@ -127,6 +141,7 @@ return {
 
           -- Linters
           "luacheck",
+          "eslint",
           "eslint_d",
           "actionlint",
         },
