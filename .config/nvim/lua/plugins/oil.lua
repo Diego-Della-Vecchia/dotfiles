@@ -12,7 +12,6 @@ return {
         return name:match("^%.git$") ~= nil
           or name == ".."
           or name == "node_modules"
-          or name == "bin"
           or name == "build"
           or name == "dist"
       end,
