@@ -43,6 +43,7 @@
   "tiny-code-action.nvim": { "branch": "main", "commit": "f4a154569146d29fd4661ae289d83c4378135736" },
   "tiny-devicons-auto-colors.nvim": { "branch": "main", "commit": "51f548421f8a74680eff27d283c9d5ea6e8d0074" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "c7b1488ad0b389763c34bd17a6264424b3da5a52" },
+  "todo-comments.nvim": { "branch": "main", "commit": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668" },
   "vim-tmux-navigator": { "branch": "master", "commit": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }
