@@ -1,4 +1,4 @@
-local opt = vim.opt --For concicesness
+local opt = vim.opt -- For conciseness
 
 opt.relativenumber = false
 opt.number = true
@@ -32,24 +32,13 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.swapfile = false
 
 -- global statusline
-vim.opt.laststatus = 3
+opt.laststatus = 3
 
--- inline error messages, handled with tiny-inline plugin
--- vim.diagnostic.config({
---   virtual_text = {
---     prefix = "▶",
---     spacing = 2,
---   },
---   signs = true,
---   underline = true,
---   update_in_insert = false,
---   severity_sort = true,
--- })
-
--- Populate quickix/location list with diagnostics
+-- Populate quickfix/location list with diagnostics
 vim.api.nvim_create_autocmd("DiagnosticChanged", {
   callback = function()
     vim.diagnostic.setqflist({ open = false })
     vim.diagnostic.setloclist({ open = false })
   end,
 })
+
