@@ -118,3 +118,7 @@ export BUN_INSTALL="$HOME/.bun"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by flyctl installer
+export FLYCTL_INSTALL="/home/diego/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"

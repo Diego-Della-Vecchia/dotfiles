@@ -3,21 +3,11 @@
 # Install system packages
 grep -vE '^\s*#|^\s*$' packages.txt | xargs sudo apt install -y
 
-# Install NVM
-if ! command -v nvm &>/dev/null; then
-    echo "Installing NVM..."
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.6/install.sh | bash
-    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-fi
+# Bun
+curl -fsSL https://bun.sh/install | bash
 
-# Install pulumi
-echo "Installing Pulumi..."
-curl -fsSL https://get.pulumi.com | sh
-
-# Install pulumi esc
-echo "Installing Pulumi ESC..."
-curl -fsSL https://get.pulumi.com/esc/install.sh | sh
+# Opencode
+bun add -g opencode-ai
 
 # Install Neovim (latest)
 echo "Installing Neovim..."
