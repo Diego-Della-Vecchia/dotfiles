@@ -1,7 +1,23 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": true,
+  "theme": "catppuccin-frappe",
   "model": "opencode/claude-opus-4-5",
   "small_model": "opencode/gemini-3-flash",
-  "theme": "catppuccin-frappe"
+  "permission": {
+    // Allow everything but bash to avoid agents commiting code without review
+    // or installing new dependencies
+    "bash": "ask",
+    "edit": "allow",
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "skill": "allow",
+    "todowrite": "allow",
+    "todoread": "allow",
+    "webfetch": "ask",
+    "question": "allow",
+  }
 }
