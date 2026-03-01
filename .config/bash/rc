@@ -1,0 +1,29 @@
+# this file contains shared bash configs
+# source it in your main .bashrc
+
+# vim mode
+set -o vi
+
+# utils
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
+# fzf color scheme
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#51576D,bg:#303446,spinner:#F2D5CF,hl:#E78284 \
+--color=fg:#C6D0F5,header:#E78284,info:#CA9EE6,pointer:#F2D5CF \
+--color=marker:#BABBF1,fg+:#C6D0F5,prompt:#CA9EE6,hl+:#E78284 \
+--color=border:#737994,label:#C6D0F5"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# --- Glow theme ---
+alias glow="glow -s ~/.config/glow/catppuccin-frappe.json"
+
+# Alias for dotfile bare repo
+alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
