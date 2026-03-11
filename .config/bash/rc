@@ -27,3 +27,6 @@ alias glow="glow -s ~/.config/glow/catppuccin-frappe.json"
 
 # Alias for dotfile bare repo
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Any path extensions
+EXPORT PATH="$PATH:/home/diego/.cargo/bin"
