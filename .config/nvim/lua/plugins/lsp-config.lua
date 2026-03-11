@@ -114,6 +114,36 @@ return {
           },
         },
       }
+
+      local disable_formatting = function(client)
+        client.server_capabilities.documentFormattingProvider = false
+      end
+
+      vim.lsp.config.ts_ls = {
+        on_attach = disable_formatting,
+        capabilities = capabilities,
+        settings = {
+          run = "onSave",
+          onType = "off",
+          codeActionOnSave = {
+            enable = false,
+            mode = "all",
+          },
+        },
+      }
+
+      vim.lsp.config["typescript-tool"] = {
+        on_attach = disable_formatting,
+        capabilities = capabilities,
+        settings = {
+          run = "onSave",
+          onType = "off",
+          codeActionOnSave = {
+            enable = false,
+            mode = "all",
+          },
+        },
+      }
     end,
 
     keys = {
