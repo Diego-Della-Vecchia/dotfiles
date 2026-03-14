@@ -11,7 +11,7 @@ return {
         path = "/tmp/" .. basename .. ".99.debug",
         print_on_error = true,
       },
-      provider = _99.Providers.OpenCodeProvider,
+      provider = _99.Providers.ClaudeCodeProvider,
       tmp_dir = "./tmp",
 
       completion = {
@@ -30,7 +30,8 @@ return {
       source = "cmp",
 
       md_files = {
-        "AGENT.md",
+        "CLAUDE.md",
+        "README.md",
       },
     })
 
