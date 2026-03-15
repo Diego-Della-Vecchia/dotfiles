@@ -1,6 +1,8 @@
 # this file contains shared bash configs
 # source it in your main .bashrc
 
+export EDITOR=nvim
+
 # vim mode
 set -o vi
 
