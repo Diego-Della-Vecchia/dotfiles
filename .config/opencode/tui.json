@@ -1,4 +1,8 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "catppuccin-frappe"
+  "theme": "catppuccin-frappe",
+  "keybinds": {
+    "app_exit": "ctrl+c,ctrl+d,<leader>q",
+    "editor_open": "<leader>e",
+  }
 }
