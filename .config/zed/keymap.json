@@ -24,6 +24,11 @@
 
       "space a t": "agent::Toggle",
       "space a f": "agent::ToggleFocus",
+
+      "space d d": "workspace::CloseActiveDock",
+
+      "space s h": "workspace::NewFileSplitVertical",
+      "space s v": "workspace::NewFileSplitHorizontal",
     },
   },
 ]
