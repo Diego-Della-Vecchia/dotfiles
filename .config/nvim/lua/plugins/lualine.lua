@@ -23,7 +23,7 @@ return {
     },
     opts = {
       options = {
-        theme = "catppuccin",
+        theme = "catppuccin-frappe",
         globalstatus = true,
         component_separators = { left = "", right = "" },
         section_separators = { right = "", left = "" },
