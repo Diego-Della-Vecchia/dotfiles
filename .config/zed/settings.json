@@ -1,4 +1,5 @@
 {
+  // Nice font and theme
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "icon_theme": "Catppuccin Frappé",
   "theme": {
@@ -12,8 +13,49 @@
     "calt": false,
   },
 
-  "session": {
-    "trust_all_worktrees": true,
+  // Very minimal layout
+  "status_bar": {
+    "experimental.show": false,
+  },
+
+  "tab_bar": {
+    "show": false,
+  },
+
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+    "selections_menu": false,
+    "agent_review": false,
+    "code_actions": false,
+  },
+
+  "title_bar": {
+    "show_branch_icon": false,
+    "show_branch_name": false,
+    "show_project_items": false,
+    "show_onboarding_banner": false,
+    "show_user_picture": true,
+    "show_user_menu": true,
+    "show_sign_in": false,
+    "show_menus": false,
+  },
+
+  "project_panel": {
+    "dock": "right",
+    "default_width": 300,
+    "hide_hidden": true,
+    "hide_root": false,
+  },
+
+  "scrollbar": {
+    "show": "never",
+  },
+
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": false,
+    },
   },
 
   "edit_predictions": {
