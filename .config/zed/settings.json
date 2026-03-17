@@ -1,11 +1,16 @@
 {
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "icon_theme": "Catppuccin Frappé",
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
     "dark": "Catppuccin Frappé",
   },
   "ui_font_size": 16,
   "buffer_font_size": 15,
+  "buffer_font_features": {
+    "calt": false,
+  },
 
   "session": {
     "trust_all_worktrees": true,
