@@ -1,0 +1,8 @@
+{
+  "cursorUp": ["up", "ctrl+k"],
+  "cursorDown": ["down", "ctrl+j"],
+  "cursorLeft": ["left", "ctrl+h"],
+  "cursorRight": ["right", "ctrl+l"],
+  "cursorWordLeft": ["alt+left", "ctrl+b"],
+  "cursorWordRight": ["alt+right", "ctrl+w"]
+}
