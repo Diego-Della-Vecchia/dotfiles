@@ -32,3 +32,11 @@ alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Any path extensions
 export PATH="$PATH:/home/diego/.cargo/bin"
+
+
+# pnpm 
+export PNPM_HOME="/home/diego/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
