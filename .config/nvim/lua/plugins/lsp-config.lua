@@ -13,11 +13,6 @@ return {
     },
   },
 
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-  },
   -- Mason core
   {
     "mason-org/mason.nvim",
@@ -42,7 +37,6 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "ts_ls",
         "jsonls",
         "html",
         "cssls",
@@ -55,24 +49,27 @@ return {
     },
 
     config = function(_, opts)
+      -- custom ts go lsp because it's not on mason yet
+      vim.lsp.config("tsgo", {
+        cmd = { "tsgo", "--lsp", "--stdio" },
+        root_markers = { "tsconfig.json", "package.json", ".git" },
+        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+      })
+      vim.lsp.enable("tsgo")
+
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.semanticTokens = nil
       capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
 
       require("mason-lspconfig").setup(opts)
 
-      if capabilities.workspace then
-        capabilities.workspace.didChangeWatchedFiles = {
-          dynamicRegistration = false,
-        }
-      end
-
-      local on_attach = function(client, bufnr)
-        client.server_capabilities.semanticTokensProvider = nil
-      end
+      -- disable ts_ls in favor of custom tsgo lsp
+      vim.lsp.config.ts_ls = {
+        enabled = false,
+        autostart = false,
+      }
 
       vim.lsp.config.tailwindcss = {
-        on_attach = on_attach,
         capabilities = capabilities,
         settings = {
           tailwindCSS = {
@@ -92,55 +89,10 @@ return {
       }
 
       vim.lsp.config.rust_analyzer = {
-        on_attach = on_attach,
-        capabilities = capabilities,
         settings = {
           ["rust-analyzer"] = {
             cargo = { allFeatures = true },
             checkOnSave = { command = "clippy" },
-          },
-        },
-      }
-
-      vim.lsp.config.eslint = {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        settings = {
-          run = "onSave",
-          onType = "off",
-          codeActionOnSave = {
-            enable = false,
-            mode = "all",
-          },
-        },
-      }
-
-      local disable_formatting = function(client)
-        client.server_capabilities.documentFormattingProvider = false
-      end
-
-      vim.lsp.config.ts_ls = {
-        on_attach = disable_formatting,
-        capabilities = capabilities,
-        settings = {
-          run = "onSave",
-          onType = "off",
-          codeActionOnSave = {
-            enable = false,
-            mode = "all",
-          },
-        },
-      }
-
-      vim.lsp.config["typescript-tool"] = {
-        on_attach = disable_formatting,
-        capabilities = capabilities,
-        settings = {
-          run = "onSave",
-          onType = "off",
-          codeActionOnSave = {
-            enable = false,
-            mode = "all",
           },
         },
       }
@@ -170,8 +122,9 @@ return {
         "stylua",
         "prettierd",
         "luacheck",
-        "eslint_d",
         "actionlint",
+        "oxfmt",
+        "oxlint",
       },
       auto_update = true,
       run_on_start = true,
