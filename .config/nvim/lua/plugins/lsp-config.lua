@@ -124,7 +124,8 @@ return {
         "luacheck",
         "actionlint",
         "oxfmt",
-        "oxlint",
+        -- currently a bit slow on wsl at least
+        -- "oxlint",
       },
       auto_update = true,
       run_on_start = true,
