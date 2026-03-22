@@ -25,16 +25,6 @@
   },
 
   {
-    "context": "ProjectPanel",
-    "bindings": {
-      "x": "project_panel::Delete",
-      "o": "project_panel::NewFile",
-      "a": "project_panel::NewFile",
-      "i": "project_panel::NewFile",
-    },
-  },
-
-  {
     "context": "Editor && (showing_code_actions || showing_completions)",
     "bindings": {
       "up": "editor::ContextMenuPrevious",

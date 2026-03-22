@@ -31,7 +31,7 @@
     "show_sign_in": false,
   },
   "status_bar": {
-    "experimental.show": true,
+    "experimental.show": false,
   },
   "tab_bar": {
     "show": false,
