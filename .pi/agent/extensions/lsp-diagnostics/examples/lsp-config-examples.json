@@ -1,0 +1,82 @@
+{
+  "$schema": "Example LSP configurations for the lsp-diagnostics extension",
+  "typescript_standard": {
+    "lsp": {
+      "typescript": {
+        "command": ["typescript-language-server", "--stdio"],
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+      }
+    }
+  },
+  "typescript_with_tsgo": {
+    "lsp": {
+      "tsgo": {
+        "command": ["tsgo", "lsp"],
+        "extensions": [".ts", ".tsx"],
+        "env": {
+          "NODE_ENV": "development"
+        }
+      }
+    }
+  },
+  "rust": {
+    "lsp": {
+      "rust": {
+        "command": ["rust-analyzer"],
+        "extensions": [".rs"]
+      }
+    }
+  },
+  "python": {
+    "lsp": {
+      "python": {
+        "command": ["pylsp"],
+        "extensions": [".py"]
+      }
+    }
+  },
+  "go": {
+    "lsp": {
+      "go": {
+        "command": ["gopls"],
+        "extensions": [".go"],
+        "initialization": {
+          "ui.diagnostic.annotations": {
+            "bounds": true,
+            "escape": true,
+            "inline": true,
+            "nil": true
+          }
+        }
+      }
+    }
+  },
+  "multiple_servers": {
+    "lsp": {
+      "typescript": {
+        "command": ["typescript-language-server", "--stdio"],
+        "extensions": [".ts", ".tsx"]
+      },
+      "eslint": {
+        "command": ["vscode-eslint-language-server", "--stdio"],
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+      },
+      "tailwind": {
+        "command": ["tailwindcss-language-server", "--stdio"],
+        "extensions": [".html", ".tsx", ".jsx", ".vue"]
+      }
+    }
+  },
+  "disabled": {
+    "lsp": false
+  },
+  "server_disabled": {
+    "lsp": {
+      "typescript": {
+        "command": ["typescript-language-server", "--stdio"],
+        "extensions": [".ts", ".tsx"],
+        "disabled": true
+      }
+    }
+  }
+}
