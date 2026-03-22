@@ -25,8 +25,13 @@
   },
 
   {
-    "context": "Pane",
-    "bindings": {},
+    "context": "ProjectPanel",
+    "bindings": {
+      "d d": "project_panel::Delete",
+      "o": "project_panel::NewFile",
+      "a": "project_panel::NewFile",
+      "i": "project_panel::NewFile",
+    },
   },
 
   {
