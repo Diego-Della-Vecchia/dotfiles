@@ -1,0 +1,5 @@
+./agent/auth.json
+./agent/sessions/*
+./agent/bin/*
+./pi-acp/*
+./agent/bin/*
