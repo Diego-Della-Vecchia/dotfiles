@@ -22,8 +22,6 @@ return {
       dashboard.button("f", "  Find File", "<cmd>Telescope find_files<CR>"),
       dashboard.button("g", "  Find Text", "<cmd>Telescope live_grep<CR>"),
       dashboard.button("n", "  New File", "<cmd>ene <BAR> startinsert<CR>"),
-      dashboard.button("s", "󰺄  Search sessions", "<cmd>AutoSession search<CR>"),
-      dashboard.button("d", "  Delete sessions", "<cmd>AutoSession deletePicker<CR>"),
       dashboard.button("r", "  Recent", "<cmd>Telescope oldfiles<CR>"),
       dashboard.button("u", "  Update Plugins", "<cmd>Lazy update<CR>"),
       dashboard.button("c", "  Settings", "<cmd>e $MYVIMRC<CR>"),
