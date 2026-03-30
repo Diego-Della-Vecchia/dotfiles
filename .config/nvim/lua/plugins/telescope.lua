@@ -3,20 +3,10 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    {
-      "nvim-telescope/telescope-live-grep-args.nvim",
-      version = "^1.0.0",
-    },
   },
   keys = {
     { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find files" },
-    {
-      "<leader>fg",
-      function()
-        require("telescope").extensions.live_grep_args.live_grep_args()
-      end,
-      desc = "Ripgrep search",
-    },
+    { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Find files" },
     { "<leader>ft", "<cmd>TodoTelescope<CR>", desc = "Find TODOs" },
     { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Buffers search" },
     { "<leader>fr", "<cmd>Telescope lsp_references<CR>", desc = "Find references" },
@@ -29,7 +19,6 @@ return {
   opts = function()
     local actions = require("telescope.actions")
     local action_state = require("telescope.actions.state")
-    local lga_actions = require("telescope-live-grep-args.actions")
 
     -- Define the custom copy function
     local function copy_diagnostic(prompt_bufnr)
@@ -64,23 +53,11 @@ return {
         file_ignore_patterns = { "node_modules", ".git" },
         previewer = true,
       },
-      extensions = {
-        live_grep_args = {
-          auto_quoting = true,
-          mappings = {
-            i = {
-              ["<C-k>"] = lga_actions.quote_prompt(),
-              ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
-            },
-          },
-        },
-      },
     }
   end,
   config = function(_, opts)
     local telescope = require("telescope")
     telescope.setup(opts)
     telescope.load_extension("fzf")
-    telescope.load_extension("live_grep_args")
   end,
 }
