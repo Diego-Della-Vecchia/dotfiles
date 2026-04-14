@@ -11,6 +11,7 @@
 	rebase = true 			 
 [push]
 	autoSetupRemote = true   
+	default = simple
 [diff]
 	algorithm = histogram   
 	colorMoved = plain     
@@ -21,6 +22,7 @@
 	ui = auto 			     
 [branch]
 	sort = -committerdate    
+	autoSetupMerge = simple
 [tag]
 	sort = -version:refname  
 [rerere]
