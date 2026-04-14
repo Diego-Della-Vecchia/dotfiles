@@ -38,6 +38,7 @@ return {
       ensure_installed = {
         "lua_ls",
         "jsonls",
+        "tsgo",
         "html",
         "cssls",
         "emmet_ls",
