@@ -50,17 +50,7 @@ return {
     },
 
     config = function(_, opts)
-      -- custom ts go lsp because it's not on mason yet
-      vim.lsp.config("tsgo", {
-        cmd = { "tsgo", "--lsp", "--stdio" },
-        root_markers = { "tsconfig.json", "package.json", ".git" },
-        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-      })
-      vim.lsp.enable("tsgo")
-
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.semanticTokens = nil
-      capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
 
       require("mason-lspconfig").setup(opts)
 
@@ -68,6 +58,29 @@ return {
       vim.lsp.config.ts_ls = {
         enabled = false,
         autostart = false,
+      }
+
+      vim.lsp.config.tsgo = {
+        capabilities = capabilities,
+        on_attach = function(client)
+          client.server_capabilities.semanticTokensProvider = nil
+        end,
+        settings = {
+          typescript = {
+            tsserver = {
+              useProjectService = true,
+              watchOptions = {
+                excludeDirectories = {
+                  "**/node_modules",
+                  "**/.next",
+                  "**/dist",
+                  "**/.turbo",
+                  "**/.bun",
+                },
+              },
+            },
+          },
+        },
       }
 
       vim.lsp.config.tailwindcss = {
@@ -102,7 +115,6 @@ return {
     keys = {
       { "gd", vim.lsp.buf.definition, desc = "Go to Definition" },
       { "gr", vim.lsp.buf.references, desc = "Go to References" },
-      -- K is handled by hover.lua
       { "<leader>rn", vim.lsp.buf.rename, desc = "Rename Symbol" },
       {
         "<leader>ca",
@@ -125,8 +137,6 @@ return {
         "luacheck",
         "actionlint",
         "oxfmt",
-        -- currently a bit slow on wsl at least
-        -- "oxlint",
       },
       auto_update = true,
       run_on_start = true,
