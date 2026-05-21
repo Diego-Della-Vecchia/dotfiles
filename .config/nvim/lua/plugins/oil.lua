@@ -23,27 +23,6 @@ return {
         vim.api.nvim_buf_delete(buf, { force = true })
       end
     end,
-    float = {
-      padding = 2,
-      max_width = 80,
-      min_width = 40,
-      max_height = 30,
-      min_height = 10,
-      border = "rounded",
-      win_options = {
-        winblend = 0,
-      },
-    },
-    confirmation = {
-      max_width = 80,
-      min_width = 40,
-      max_height = 40,
-      min_height = 10,
-      border = "rounded",
-      win_options = {
-        winblend = 0,
-      },
-    },
   },
   dependencies = { "nvim-tree/nvim-web-devicons" },
   lazy = false,
